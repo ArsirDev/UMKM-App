@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.home.admin.activity.ui.penjual.PenjualFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="60dp">
+
+        <TextView
+            android:id="@+id/tv_title_penjual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Insert Data Penjual"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_toko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#182434"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_penjual">
+
+            <ImageView
+                android:id="@+id/iv_toko"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/iv_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_toko" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_nama"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_nama"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_nama"
+            app:layout_constraintTop_toTopOf="@+id/iv_nama">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Nama ..."
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_mail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_nama" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_email"
+            app:layout_constraintTop_toTopOf="@+id/iv_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Email ..."
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_nama_toko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_store"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_email" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_nama_toko"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_nama_toko"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_nama_toko"
+            app:layout_constraintTop_toTopOf="@+id/iv_nama_toko">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nama_toko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Nama Toko ..."
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_nama_toko" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_alamat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_alamat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_alamat"
+            app:layout_constraintTop_toTopOf="@+id/iv_alamat">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Address ..."
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_number_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_alamat" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_number_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_number_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_number_phone"
+            app:layout_constraintTop_toTopOf="@+id/iv_number_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_number_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Number Phone ..."
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tl_number_phone" />
+
+        <RadioGroup
+            android:id="@+id/rg_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_status"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_status"
+            app:layout_constraintTop_toTopOf="@+id/iv_status">
+
+            <RadioButton
+                android:id="@+id/rb_produsen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Penjual" />
+
+        </RadioGroup>
+
+
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_status" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tl_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_password"
+            app:layout_constraintTop_toTopOf="@+id/iv_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:hint="Password ..."
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingTop="15dp"
+                android:paddingEnd="50dp"
+                android:paddingBottom="15dp"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/button_corner_rounded"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/tl_password"
+            app:layout_constraintStart_toStartOf="@+id/tl_password"
+            app:layout_constraintTop_toBottomOf="@+id/tl_password" />
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

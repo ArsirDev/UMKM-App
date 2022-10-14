@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bisnis UMKM</string>
+    <string name="title_activity_admin_home">AdminHomeActivity</string>
+    <string name="title_produsen">Produsen</string>
+    <string name="title_penjual">Penjual</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_laporan">Laporan</string>
+</resources>

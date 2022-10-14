@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_penjual_navigation"
+    app:startDestination="@id/navigation_penjual_produsen">
+
+    <fragment
+        android:id="@+id/navigation_penjual_produsen"
+        android:name="com.example.bisnisumkm.presentation.home.penjual.ui.produsen.ProdusenPenjualFragment"
+        android:label="fragment_produsen_on_penjual"
+        tools:layout="@layout/fragment_produsen_on_penjual" />
+    <fragment
+        android:id="@+id/navigation_penjual_laporan"
+        android:name="com.example.bisnisumkm.presentation.home.penjual.ui.laporan.LaporanPenjualFragment"
+        android:label="fragment_laporan_penjual"
+        tools:layout="@layout/fragment_laporan_penjual" />
+    <fragment
+        android:id="@+id/navigation_penjual_profile"
+        android:name="com.example.bisnisumkm.presentation.home.penjual.ui.profile.PenjualProfileFragment"
+        android:label="fragment_penjual_profile"
+        tools:layout="@layout/fragment_penjual_profile" />
+
+</navigation>

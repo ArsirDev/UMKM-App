@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/button_corner_rounded.xml" value="0.3718079673135853" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/custom_edit_text.xml" value="0.3718079673135853" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/dot_layout.xml" value="0.26149131767109296" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/fade_primary_dark.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_broken_image_black.xml" value="0.26149131767109296" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_rp.xml" value="0.3718079673135853" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_stock.xml" value="0.3718079673135853" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/profile_rounded_layout.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout-v28/fragment_produsen_profile.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_admin.xml" value="0.3328804347826087" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_admin_home.xml" value="0.136" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_admin_home2.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_detail_penjual_on_produsen.xml" value="0.2" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_detail_produsen_penjual.xml" value="0.2" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_home_produsen.xml" value="0.152" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_login.xml" value="0.144" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_login_seller.xml" value="0.4" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_penjua.xml" value="0.17028985507246377" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_penjual.xml" value="0.2" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_penjual_home.xml" value="0.264" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_produsen.xml" value="0.1" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_welcome.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_home.xml" value="0.15307971014492755" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_laporan_penjual.xml" value="0.176" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_laporan_produsen.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_penjual.xml" value="0.264" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_penjual_on_produsen.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_penjual_profile.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_produsen.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_produsen_on_penjual.xml" value="0.264" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_produsen_profile.xml" value="0.2" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/laporan_item_layout.xml" value="0.2" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/penjual_on_produsen_item_layout.xml" value="0.3614457831325301" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/produsen_layout_item.xml" value="0.305019305019305" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/menu/bottom_nav_menu.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/menu/bottom_nav_penjual_menu.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/menu/bottom_nav_produsen_menu.xml" value="0.35885416666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

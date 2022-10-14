@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_produsen_penjual"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_penjual" />
+
+    <item
+        android:id="@+id/navigation_produsen_laporan"
+        android:icon="@drawable/ic_laporan"
+        android:title="@string/title_laporan" />
+
+    <item
+        android:id="@+id/navigation_produsen_profile"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_profile" />
+</menu>

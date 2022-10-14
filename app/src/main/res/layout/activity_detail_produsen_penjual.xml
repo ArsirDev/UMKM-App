@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.home.penjual.detail.DetailProdusenPenjualActivity">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:id="@+id/ly_header"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/dark"
+           android:orientation="horizontal"
+           android:padding="16dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <ImageView
+               android:id="@+id/iv_back"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:srcCompat="@drawable/ic_left_arrow"
+               app:tint="@color/white" />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/roboto_bold"
+               android:gravity="center"
+               android:text="Detail View"
+               android:textColor="@color/white"
+               android:textSize="17sp" />
+
+       </LinearLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/ly_image"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/ly_header">
+
+           <ImageView
+               android:id="@+id/iv_store"
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <androidx.cardview.widget.CardView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:layout_marginBottom="24dp"
+               app:cardBackgroundColor="@android:color/transparent"
+               app:cardCornerRadius="8dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintStart_toStartOf="parent">
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:gravity="center"
+                   android:padding="8dp">
+
+                   <TextView
+                       android:id="@+id/tv_product_name"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto_bold"
+                       android:layout_marginStart="4dp"
+                       android:layout_marginEnd="4dp"
+                       android:text="Nama Product"
+                       android:textColor="@color/white" />
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <View
+               android:id="@+id/view2"
+               android:layout_width="match_parent"
+               android:layout_height="250dp"
+               android:background="@drawable/fade_primary_dark"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/inner_layout"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:paddingStart="16dp"
+           android:paddingTop="24dp"
+           android:paddingEnd="16dp"
+           android:paddingBottom="24dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/ly_image">
+
+           <TextView
+               android:id="@+id/tv_title"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:fontFamily="@font/roboto_bold"
+               android:padding="4dp"
+               android:text="Produsen"
+               android:textColor="@color/light_blue"
+               android:textSize="24sp"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <TextView
+               android:id="@+id/title_of_produsen"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Nama Produsen"
+               android:layout_marginTop="16dp"
+               android:textSize="15sp"
+               android:fontFamily="@font/roboto_bold"
+               android:textColor="@color/light_blue"
+               app:layout_constraintTop_toBottomOf="@id/tv_title"
+               app:layout_constraintStart_toStartOf="parent"
+               />
+
+           <ImageView
+               android:id="@+id/iv_person"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="4dp"
+               app:layout_constraintStart_toStartOf="@+id/title_of_produsen"
+               app:layout_constraintTop_toBottomOf="@id/title_of_produsen"
+               app:srcCompat="@drawable/ic_person" />
+
+           <TextView
+               android:id="@+id/tv_produsen_name"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Nama Produsen"
+               android:layout_marginStart="4dp"
+               android:alpha="0.6"
+               app:layout_constraintBottom_toBottomOf="@+id/iv_person"
+               app:layout_constraintStart_toEndOf="@+id/iv_person"
+               app:layout_constraintTop_toTopOf="@+id/iv_person" />
+
+           <TextView
+               android:id="@+id/title_of_alamat"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Alamat"
+               android:layout_marginTop="8dp"
+               android:textSize="15sp"
+               android:fontFamily="@font/roboto_bold"
+               android:textColor="@color/light_blue"
+               app:layout_constraintTop_toBottomOf="@id/iv_person"
+               app:layout_constraintStart_toStartOf="parent"
+               />
+
+           <ImageView
+               android:id="@+id/iv_alamat"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="4dp"
+               app:layout_constraintStart_toStartOf="@+id/title_of_alamat"
+               app:layout_constraintTop_toBottomOf="@id/title_of_alamat"
+               app:srcCompat="@drawable/ic_address" />
+
+           <TextView
+               android:id="@+id/tv_alamat_produsen"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Alamat Produsen"
+               android:layout_marginStart="4dp"
+               android:alpha="0.6"
+               app:layout_constraintBottom_toBottomOf="@+id/iv_alamat"
+               app:layout_constraintStart_toEndOf="@+id/iv_alamat"
+               app:layout_constraintTop_toTopOf="@+id/iv_alamat" />
+
+           <TextView
+               android:id="@+id/title_of_phone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Nomor Handphone"
+               android:layout_marginTop="8dp"
+               android:textSize="15sp"
+               android:fontFamily="@font/roboto_bold"
+               android:textColor="@color/light_blue"
+               app:layout_constraintTop_toBottomOf="@id/iv_alamat"
+               app:layout_constraintStart_toStartOf="parent"
+               />
+
+           <ImageView
+               android:id="@+id/iv_phone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="4dp"
+               app:layout_constraintStart_toStartOf="@+id/title_of_phone"
+               app:layout_constraintTop_toBottomOf="@id/title_of_phone"
+               app:srcCompat="@drawable/ic_phone" />
+
+           <TextView
+               android:id="@+id/tv_produsen_phone"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="4dp"
+               android:alpha="0.6"
+               android:text="Nomor Handphone Perodusen"
+               app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+               app:layout_constraintStart_toEndOf="@+id/iv_phone"
+               app:layout_constraintTop_toTopOf="@+id/iv_phone" />
+
+           <TextView
+               android:id="@+id/title_produsen_qty"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="16dp"
+               android:fontFamily="@font/roboto_bold"
+               android:text="Jumlah Barang"
+               android:textColor="@color/light_blue"
+               android:textSize="15sp"
+               app:layout_constraintStart_toStartOf="@+id/iv_phone"
+               app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
+
+           <ImageView
+               android:id="@+id/iv_produsen_qty"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:srcCompat="@drawable/ic_stock"
+               android:layout_marginTop="16dp"
+               app:layout_constraintStart_toStartOf="@+id/title_produsen_qty"
+               app:layout_constraintTop_toBottomOf="@+id/title_produsen_qty" />
+
+           <TextView
+               android:id="@+id/tv_produsen_qty"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="4dp"
+               android:alpha="0.6"
+               android:text="20"
+               app:layout_constraintBottom_toBottomOf="@+id/iv_produsen_qty"
+               app:layout_constraintStart_toEndOf="@+id/iv_produsen_qty"
+               app:layout_constraintTop_toTopOf="@+id/iv_produsen_qty" />
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:id="@+id/ly_input"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="24dp"
+               android:visibility="gone"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/iv_produsen_qty">
+
+               <TextView
+                   android:id="@+id/title_of_sisa"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/roboto_bold"
+                   android:text="Sisa Barang"
+                   android:textColor="@color/light_blue"
+                   android:textSize="17sp"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/tl_sisah"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/title_of_sisa">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/et_sisa"
+                       style="@style/CustomEditText"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto"
+                       android:hint="Sisa Barang ..."
+                       android:inputType="number"
+                       android:textColor="@color/textColorGrey" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <TextView
+                   android:id="@+id/title_of_laku"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/roboto_bold"
+                   android:layout_marginTop="8dp"
+                   android:text="Barang Laku"
+                   android:textColor="@color/light_blue"
+                   android:textSize="17sp"
+                   app:layout_constraintTop_toBottomOf="@+id/tl_sisah"
+                   app:layout_constraintStart_toStartOf="parent" />
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/tl_laku"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/title_of_laku">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/et_laku"
+                       style="@style/CustomEditText"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto"
+                       android:hint="Barang Laku ..."
+                       android:inputType="number"
+                       android:textColor="@color/textColorGrey" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <Button
+                   android:id="@+id/btn_selesai"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="16dp"
+                   android:background="@drawable/button_corner_rounded"
+                   android:fontFamily="@font/roboto_bold"
+                   android:backgroundTint="@color/red_color"
+                   android:text="Penyelesaian Penitipan"
+                   android:textColor="@color/white"
+                   android:layout_marginBottom="16dp"
+                   app:layout_goneMarginTop="16dp"
+                   android:textSize="14sp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/tl_laku" />
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <Button
+           android:id="@+id/btn_Approve"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="24dp"
+           android:layout_marginBottom="24dp"
+           android:background="@drawable/button_corner_rounded"
+           android:fontFamily="@font/roboto_bold"
+           android:layout_marginStart="16dp"
+           android:layout_marginEnd="16dp"
+           android:text="Terima Penitipan"
+           android:textColor="@color/white"
+           android:textSize="14sp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/inner_layout" />
+
+       <ProgressBar
+           android:id="@+id/pb_loading"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
