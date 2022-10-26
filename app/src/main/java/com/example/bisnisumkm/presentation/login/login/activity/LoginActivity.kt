@@ -46,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
         initLaunch()
         initView()
-        P_E_M(SimpleName(), "token: ${sessionManager.token}")
     }
 
     private fun initView() {
@@ -85,7 +84,6 @@ class LoginActivity : AppCompatActivity() {
                                 val status = response.status
                                 val phone = response.numberPhone
                                 val token = response.token
-
                                 sessionManager.createAuthSession(
                                     name,
                                     email,

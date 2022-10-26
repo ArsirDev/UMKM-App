@@ -14,7 +14,6 @@ import javax.inject.Inject
 class SessionManager @Inject constructor(
     context: Context
 ) {
-
     private val sharedPreferences: SharedPreferences
     private val editor: SharedPreferences.Editor
     private var PRIVATE_MODE = 0

@@ -8,6 +8,7 @@
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/dot_layout.xml" value="0.26149131767109296" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/fade_primary_dark.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_broken_image_black.xml" value="0.26149131767109296" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_image_black.xml" value="0.16842105263157894" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_rp.xml" value="0.3718079673135853" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/ic_stock.xml" value="0.3718079673135853" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/drawable/profile_rounded_layout.xml" value="0.26666666666666666" />
@@ -25,7 +26,7 @@
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_penjual_home.xml" value="0.264" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_produsen.xml" value="0.1" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_register.xml" value="0.264" />
-        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_welcome.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/activity_welcome.xml" value="0.176" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_home.xml" value="0.15307971014492755" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_laporan_penjual.xml" value="0.176" />
         <entry key="..\:/Users/MSI Gaming/AndroidStudioProjects/BisnisUMKM/app/src/main/res/layout/fragment_laporan_produsen.xml" value="0.35885416666666664" />
