@@ -6,7 +6,7 @@ import com.example.bisnisumkm.databinding.LaporanItemLayoutBinding
 import com.example.bisnisumkm.util.convertDate
 
 class LaporanProdusenViewHolder(
-    private val binding: LaporanItemLayoutBinding
+    val binding: LaporanItemLayoutBinding
 ): RecyclerView.ViewHolder(binding.root) {
     fun bind(dataLaporanItemPenjulan: DataGetLaporanItem) {
         with(binding) {
@@ -16,6 +16,9 @@ class LaporanProdusenViewHolder(
             tvQty.text = String.format("Jumlah Penitipan %s pcs", dataLaporanItemPenjulan.qty)
             tvSisa.text = String.format("Jumlah Sisa %s pcs", dataLaporanItemPenjulan.sisaProduct)
             tvLaku.text = String.format("Jumlah Laku %s pcs", dataLaporanItemPenjulan.lakuProduct)
+            tvKeuntungan.text = String.format("Keuntungan: %s", dataLaporanItemPenjulan.harga.toInt() * dataLaporanItemPenjulan.lakuProduct.toInt())
+            tvTanggalPenitipan.text = String.format("Tanggal Penitipan %s",dataLaporanItemPenjulan.tanggalNitip)
+            tvTanggalPengambilan.text = String.format("Tanggal Pengambilan %s",dataLaporanItemPenjulan.tanggalPengambilan)
             tvStatus.text = dataLaporanItemPenjulan.status
         }
     }

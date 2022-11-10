@@ -37,6 +37,9 @@ data class DataSpesificDetailProdusenRequestResponse(
 	@field:SerializedName("harga")
 	val harga: String,
 
+	@field:SerializedName("tanggal_pengambilan")
+	val tanggalPengambilan: String,
+
 	@field:SerializedName("updated_at")
 	val updatedAt: String,
 

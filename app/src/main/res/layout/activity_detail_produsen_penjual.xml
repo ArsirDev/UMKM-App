@@ -346,23 +346,46 @@
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
-       <Button
-           android:id="@+id/btn_Approve"
+       <LinearLayout
+           android:id="@+id/ly_Action"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_marginTop="24dp"
-           android:layout_marginBottom="24dp"
-           android:background="@drawable/button_corner_rounded"
-           android:fontFamily="@font/roboto_bold"
-           android:layout_marginStart="16dp"
-           android:layout_marginEnd="16dp"
-           android:text="Terima Penitipan"
-           android:textColor="@color/white"
-           android:textSize="14sp"
+           android:orientation="horizontal"
+           android:padding="16dp"
+           android:visibility="visible"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/inner_layout" />
+           app:layout_constraintTop_toBottomOf="@id/inner_layout">
+
+           <Button
+               android:id="@+id/btn_Approve"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:background="@drawable/button_corner_rounded"
+               android:fontFamily="@font/roboto_bold"
+               android:layout_marginEnd="4dp"
+               android:padding="16dp"
+               android:text="Terima Penitipan"
+               android:textColor="@color/white"
+               android:textSize="14sp" />
+
+           <Button
+               android:id="@+id/btn_Decline"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:layout_marginStart="4dp"
+               android:backgroundTint="@color/red_color"
+               android:background="@drawable/button_corner_rounded"
+               android:fontFamily="@font/roboto_bold"
+               android:padding="16dp"
+               android:text="Tolak Penitipan"
+               android:textColor="@color/white"
+               android:textSize="14sp" />
+
+       </LinearLayout>
 
        <ProgressBar
            android:id="@+id/pb_loading"

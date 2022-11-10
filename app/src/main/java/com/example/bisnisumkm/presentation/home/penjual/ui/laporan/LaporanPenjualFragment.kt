@@ -9,18 +9,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bisnisumkm.R
+import com.example.bisnisumkm.data.remote.dto.GeneralResponse
 import com.example.bisnisumkm.data.remote.dto.GetLaporanResponse
 import com.example.bisnisumkm.databinding.FragmentLaporanPenjualBinding
 import com.example.bisnisumkm.presentation.home.penjual.adpater.PenjualLaporanAdapter
+import com.example.bisnisumkm.util.*
 import com.example.bisnisumkm.util.MESSAGE.STATUS_ERROR
-import com.example.bisnisumkm.util.MarginItemDecorationVertical
-import com.example.bisnisumkm.util.Result
-import com.example.bisnisumkm.util.SessionManager
-import com.example.bisnisumkm.util.removeView
-import com.example.bisnisumkm.util.showView
-import com.example.bisnisumkm.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -61,12 +58,48 @@ class LaporanPenjualFragment : Fragment(R.layout.fragment_laporan_penjual) {
                 this.addItemDecoration(MarginItemDecorationVertical(16))
                 ViewCompat.setNestedScrollingEnabled(this, true)
             }
+
+            adapter.setOnItemClickListener { id ->
+                viewModel.fetchDeleteLaporanPenjual(id)
+            }
         }
     }
 
     private fun iniLaunch() {
         observerLaporanPenjualan?.let {
             viewModel.getLaporanPenjualan().observe(viewLifecycleOwner, it)
+        }
+
+        observerDeleteLaporan?.let {
+            viewModel.getDeleteLaporanPenjual().observe(viewLifecycleOwner, it)
+        }
+    }
+
+    private var observerDeleteLaporan: Observer<Result<GeneralResponse>>? = Observer { result ->
+        when(result) {
+            is Result.Loading -> {
+                binding.pbLoading.showView()
+            }
+            is Result.Success -> {
+                binding.pbLoading.removeView()
+                result.data?.message?.let { msg ->
+                    snackbar(binding.root, msg, MESSAGE.STATUS_SUCCESS)
+                } ?: result.message?.let { msg ->
+                    snackbar(binding.root, msg, MESSAGE.STATUS_SUCCESS)
+                }
+                findNavController().currentDestination?.apply {
+                    findNavController().popBackStack()
+                    findNavController().navigate(this.id)
+                }
+            }
+            is Result.Error -> {
+                binding.pbLoading.removeView()
+                result.data?.message?.let { msg ->
+                    snackbar(binding.root, msg, STATUS_ERROR)
+                } ?: result.message?.let { msg ->
+                    snackbar(binding.root, msg, STATUS_ERROR)
+                }
+            }
         }
     }
 
@@ -81,7 +114,7 @@ class LaporanPenjualFragment : Fragment(R.layout.fragment_laporan_penjual) {
                             }
                             is Result.Success -> {
                                 binding.pbLoading.removeView()
-                                result.data?.dataGetLaporanItem?.let { item ->
+                                result.data?.data?.let { item ->
                                     if (item.isEmpty()) {
                                         binding.icEmpty.showView()
                                         return@let

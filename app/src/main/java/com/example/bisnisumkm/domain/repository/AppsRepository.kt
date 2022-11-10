@@ -1,18 +1,6 @@
 package com.example.bisnisumkm.domain.repository
 
-import com.example.bisnisumkm.data.remote.dto.AllTokolResponse
-import com.example.bisnisumkm.data.remote.dto.DetailPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.GeneralResponse
-import com.example.bisnisumkm.data.remote.dto.GetAllDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.GetLaporanResponse
-import com.example.bisnisumkm.data.remote.dto.GetSpesificDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.LaporanResponse
-import com.example.bisnisumkm.data.remote.dto.LoginPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.LoginResponse
-import com.example.bisnisumkm.data.remote.dto.RegisterResponse
-import com.example.bisnisumkm.data.remote.dto.SearchPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.SearchProdusenResponse
-import com.example.bisnisumkm.data.remote.dto.SetRequestProdusenResponse
+import com.example.bisnisumkm.data.remote.dto.*
 import com.example.bisnisumkm.util.Result
 import java.io.File
 
@@ -76,6 +64,7 @@ interface AppsRepository {
         alamat_penjual: String,
         number_phone_produsen: String,
         number_phone_penjual: String,
+        tanggal_pengambilan: String,
         qty: String,
         harga: String,
         image_produsen: File,
@@ -102,10 +91,14 @@ interface AppsRepository {
         product_name: String,
         name_toko: String,
         qty: String,
+        harga: String,
         sisa_product: String,
         laku_product: String,
+        keuntungan_produsen: String,
+        tanggal_nitip: String,
+        tanggal_pengambilan: String,
         status: String
-    ): Result<LaporanResponse>
+    ): Result<SetLaporanResponse>
 
     suspend fun getLaporanProdusen(
         produsen_name: String,
@@ -118,4 +111,16 @@ interface AppsRepository {
     suspend fun deleteProdusenRequest(
         id: Int
     ): Result<GeneralResponse>
+
+    suspend fun deleteLaporanPenjualRequest(
+        id: Int
+    ): Result<GeneralResponse>
+
+    suspend fun deleteLaporanProdusenRequest(
+        id: Int
+    ): Result<GeneralResponse>
+
+    suspend fun getAllStatusPenitipan(
+        status_penitipan: String
+    ): Result<GetAllStatusResponse>
 }

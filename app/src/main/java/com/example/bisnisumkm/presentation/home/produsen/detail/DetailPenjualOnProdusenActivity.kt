@@ -1,6 +1,7 @@
 package com.example.bisnisumkm.presentation.home.produsen.detail
 
 import android.Manifest
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -13,29 +14,23 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.findNavController
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.example.bisnisumkm.R
 import com.example.bisnisumkm.data.remote.dto.DataDetailPenjual
 import com.example.bisnisumkm.data.remote.dto.DetailPenjualResponse
 import com.example.bisnisumkm.data.remote.dto.SetRequestProdusenResponse
 import com.example.bisnisumkm.databinding.ActivityDetailPenjualOnProdusenBinding
 import com.example.bisnisumkm.presentation.home.produsen.activity.HomeProdusenActivity
-import com.example.bisnisumkm.util.MESSAGE
+import com.example.bisnisumkm.util.*
 import com.example.bisnisumkm.util.MESSAGE.STATUS_ERROR
 import com.example.bisnisumkm.util.MESSAGE.STATUS_SUCCESS
-import com.example.bisnisumkm.util.Result
 import com.example.bisnisumkm.util.SESSION.ID
-import com.example.bisnisumkm.util.getFileFromContentUri
-import com.example.bisnisumkm.util.loadImage
-import com.example.bisnisumkm.util.removeView
-import com.example.bisnisumkm.util.setOnClickListenerWithDebounce
-import com.example.bisnisumkm.util.showView
-import com.example.bisnisumkm.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 @AndroidEntryPoint
 class DetailPenjualOnProdusenActivity : AppCompatActivity() {
@@ -90,6 +85,21 @@ class DetailPenjualOnProdusenActivity : AppCompatActivity() {
 
         binding.ivBack.setOnClickListenerWithDebounce {
             onBack()
+        }
+
+        binding.ivPengambilan.setOnClickListenerWithDebounce {
+            val calendar = Calendar.getInstance()
+            val years = calendar[Calendar.YEAR]
+            val month = calendar[Calendar.MONTH]
+            val day = calendar[Calendar.DAY_OF_MONTH]
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, year, monthOfYear, dayOfMonth ->
+                    binding.tvPengambilan.text = dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
+                },
+                years, month, day
+            )
+            datePickerDialog.show()
         }
     }
 
@@ -226,6 +236,7 @@ class DetailPenjualOnProdusenActivity : AppCompatActivity() {
                 val productName = etProductName.text.toString().trim()
                 val qty = tvQty.text.toString()
                 val price = etProdusenPrice.text.toString().trim()
+                val tanggalPengambilan = tvPengambilan.text.toString()
                 viewModel.onRequestValidation(
                     data.idPenjual.toString(),
                     data.idProdusen.toString(),
@@ -238,11 +249,12 @@ class DetailPenjualOnProdusenActivity : AppCompatActivity() {
                     data.alamatPenjual,
                     data.numberPhoneProdusen,
                     data.numberPhonePenjual,
+                    tanggalPengambilan,
                     qty,
                     price,
                     newImage,
                     data.image,
-                    "Pending"
+                    "MENUNGGU"
                 )
             }
         }

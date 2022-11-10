@@ -103,6 +103,21 @@
             app:layout_constraintStart_toEndOf="@+id/iv_alamat"
             app:layout_constraintTop_toTopOf="@+id/iv_alamat" />
 
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/roboto_bold"
+            android:visibility="gone"
+            android:lineHeight="1.6dp"
+            android:text="Status"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_store"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_store" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.bisnisumkm.data.remote.dto.GeneralResponse
 import com.example.bisnisumkm.data.remote.dto.GetLaporanResponse
 import com.example.bisnisumkm.domain.repository.AppsRepository
 import com.example.bisnisumkm.util.Result
@@ -18,6 +19,8 @@ class LaporanPenjualanViewModel @Inject constructor(
 
     private val _laporan = MutableLiveData<Result<GetLaporanResponse>>()
 
+    private val _delete = MutableLiveData<Result<GeneralResponse>>()
+
     fun fetchLaporanPenjualan(penjual_name: String) = viewModelScope.launch {
         _laporan.postValue(Result.Loading())
 
@@ -27,4 +30,16 @@ class LaporanPenjualanViewModel @Inject constructor(
     }
 
     fun getLaporanPenjualan(): LiveData<Result<GetLaporanResponse>> = _laporan
+
+    fun fetchDeleteLaporanPenjual(
+        id: Int
+    ) = viewModelScope.launch {
+        _delete.postValue(Result.Loading())
+
+        val delete = repository.deleteLaporanPenjualRequest(id)
+
+        _delete.postValue(delete)
+    }
+
+    fun getDeleteLaporanPenjual(): LiveData<Result<GeneralResponse>> = _delete
 }

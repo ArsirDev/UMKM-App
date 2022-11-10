@@ -54,6 +54,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
         alamat_penjual: String,
         number_phone_produsen: String,
         number_phone_penjual: String,
+        tanggal_pengambilan: String,
         qty: String,
         harga: String,
         image_produsen: File?,
@@ -72,6 +73,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
             alamat_penjual.isEmpty() ||
             number_phone_produsen.isEmpty() ||
             number_phone_penjual.isEmpty() ||
+            tanggal_pengambilan.isEmpty() ||
             qty.isEmpty() ||
             harga.isEmpty() ||
             image_produsen == null||
@@ -94,6 +96,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
             alamat_penjual,
             number_phone_produsen,
             number_phone_penjual,
+            tanggal_pengambilan,
             qty,
             harga,
             image_produsen,
@@ -114,6 +117,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
         alamat_penjual: String,
         number_phone_produsen: String,
         number_phone_penjual: String,
+        tanggal_pengambilan: String,
         qty: String,
         harga: String,
         image_produsen: File,
@@ -135,6 +139,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
             alamat_penjual,
             number_phone_produsen,
             number_phone_penjual,
+            tanggal_pengambilan,
             qty,
             harga,
             image_produsen,

@@ -6,6 +6,11 @@
         android:title="@string/title_penjual" />
 
     <item
+        android:id="@+id/navigation_penitipan"
+        android:icon="@drawable/ic_penitipan"
+        android:title="@string/title_penitipan" />
+
+    <item
         android:id="@+id/navigation_produsen_laporan"
         android:icon="@drawable/ic_laporan"
         android:title="@string/title_laporan" />

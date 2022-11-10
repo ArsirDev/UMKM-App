@@ -1,22 +1,13 @@
 package com.example.bisnisumkm.data.remote.api
 
-import com.example.bisnisumkm.data.remote.dto.AllTokolResponse
-import com.example.bisnisumkm.data.remote.dto.DetailPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.GeneralResponse
-import com.example.bisnisumkm.data.remote.dto.GetAllDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.GetLaporanResponse
-import com.example.bisnisumkm.data.remote.dto.GetSpesificDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.LaporanResponse
-import com.example.bisnisumkm.data.remote.dto.LoginPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.LoginResponse
-import com.example.bisnisumkm.data.remote.dto.RegisterResponse
-import com.example.bisnisumkm.data.remote.dto.SearchPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.SearchProdusenResponse
-import com.example.bisnisumkm.data.remote.dto.SetRequestProdusenResponse
+import com.example.bisnisumkm.data.remote.dto.*
 import com.example.bisnisumkm.util.EndPoint.ALL_TOKO
+import com.example.bisnisumkm.util.EndPoint.DELETE_LAPORAN_PENJUAL
+import com.example.bisnisumkm.util.EndPoint.DELETE_LAPORAN_PRODUSEN
 import com.example.bisnisumkm.util.EndPoint.DELETE_PRODUSEN_REQUEST
 import com.example.bisnisumkm.util.EndPoint.GET_DETAIL_PRODUSEN_REQUEST
 import com.example.bisnisumkm.util.EndPoint.GET_ALL_PRODUSEN_REQUEST
+import com.example.bisnisumkm.util.EndPoint.GET_ALL_STATUS_REQUEST
 import com.example.bisnisumkm.util.EndPoint.GET_LAPORAN_PENJUAL
 import com.example.bisnisumkm.util.EndPoint.GET_LAPORAN_PRODUSEN
 import com.example.bisnisumkm.util.EndPoint.GET_SEPESIFICT_DETAIL_PRODUSEN_REQUEST
@@ -114,6 +105,7 @@ interface ApiInterface {
         @Part("alamat_penjual") alamat_penjual: RequestBody,
         @Part("number_phone_produsen") number_phone_produsen: RequestBody,
         @Part("number_phone_penjual") number_phone_penjual: RequestBody,
+        @Part("tanggal_pengambilan") tanggal_pengambilan: RequestBody,
         @Part("qty") qty: RequestBody,
         @Part("harga") harga: RequestBody,
         @Part image_produsen: MultipartBody.Part,
@@ -125,6 +117,11 @@ interface ApiInterface {
     suspend fun getAllDetailRequestProdusen(
         @Query("name_toko") search: String
     ): Response<GetAllDetailProdusenRequestResponse>
+
+    @GET(GET_ALL_STATUS_REQUEST)
+    suspend fun getAllStatusRequestProdusen(
+        @Query("status_penitipan") status_penitipan: String
+    ): Response<GetAllStatusResponse>
 
     @GET(GET_SEPESIFICT_DETAIL_PRODUSEN_REQUEST)
     suspend fun getSprcificDetailRequestProdusen(
@@ -145,10 +142,14 @@ interface ApiInterface {
         @Part("product_name") product_name: RequestBody,
         @Part("name_toko") name_toko: RequestBody,
         @Part("qty") qty: RequestBody,
+        @Part("harga") harga: RequestBody,
         @Part("sisa_product") sisa_product: RequestBody,
         @Part("laku_product") laku_product: RequestBody,
+        @Part("keuntungan_produsen") keuntungan_produsen: RequestBody,
+        @Part("tanggal_nitip") tanggal_nitip: RequestBody,
+        @Part("tanggal_pengambilan") tanggal_pengambilan: RequestBody,
         @Part("status") status: RequestBody
-    ): Response<LaporanResponse>
+    ): Response<SetLaporanResponse>
 
     @GET(GET_LAPORAN_PRODUSEN)
     suspend fun getLaporanProdusen(
@@ -162,6 +163,16 @@ interface ApiInterface {
 
     @GET(DELETE_PRODUSEN_REQUEST)
     suspend fun deleteProdusenRequest(
+        @Query("id") id: Int
+    ): Response<GeneralResponse>
+
+    @GET(DELETE_LAPORAN_PENJUAL)
+    suspend fun deleteLaporanPenjualRequest(
+        @Query("id") id: Int
+    ): Response<GeneralResponse>
+
+    @GET(DELETE_LAPORAN_PRODUSEN)
+    suspend fun deleteLaporanProdusenRequest(
         @Query("id") id: Int
     ): Response<GeneralResponse>
 }

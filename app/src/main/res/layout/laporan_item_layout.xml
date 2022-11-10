@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
+        android:visibility="gone"
         android:text="12/08/2022"
         android:textColor="@color/white"
         android:textSize="14sp"
@@ -32,7 +33,7 @@
         android:id="@+id/tv_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Nama Produk: Roti"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,13 +70,53 @@
         app:layout_constraintTop_toBottomOf="@id/tv_sisa" />
 
     <TextView
+        android:id="@+id/tv_keuntungan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Keuntungan: 20000"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_laku" />
+
+    <TextView
+        android:id="@+id/tv_tanggal_penitipan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tanggal Pengambilan: 02-Maret-2020"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_keuntungan" />
+
+    <TextView
+        android:id="@+id/tv_tanggal_pengambilan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tanggal Pengambilan: 02-Maret-2020"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_tanggal_penitipan" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete"
+        app:tint="@color/white" />
+
+    <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="Selesai"
         android:textColor="@color/red_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_tanggal_pengambilan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_laku" />
+        app:layout_constraintTop_toTopOf="@+id/tv_tanggal_pengambilan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

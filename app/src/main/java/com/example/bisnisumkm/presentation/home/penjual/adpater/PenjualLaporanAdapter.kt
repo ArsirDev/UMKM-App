@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bisnisumkm.data.remote.dto.DataGetLaporanItem
 import com.example.bisnisumkm.databinding.LaporanItemLayoutBinding
+import com.example.bisnisumkm.util.setOnClickListenerWithDebounce
 
 class PenjualLaporanAdapter: RecyclerView.Adapter<PenjualLaporanViewHolder>() {
 
@@ -33,11 +34,25 @@ class PenjualLaporanAdapter: RecyclerView.Adapter<PenjualLaporanViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PenjualLaporanViewHolder, position: Int) {
-        holder.bind(differ.currentList[position])
+        holder.apply {
+            bind(differ.currentList[position].also { item ->
+                binding.ivDelete.setOnClickListenerWithDebounce {
+                    onItemClickListener?.let { id ->
+                        id(item.id)
+                    }
+                }
+            })
+        }
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    private var onItemClickListener: ((Int) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Int) -> Unit) {
+        onItemClickListener = listener
     }
 
     companion object {

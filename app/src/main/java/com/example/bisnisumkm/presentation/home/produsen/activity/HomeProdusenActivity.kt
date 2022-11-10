@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.bisnisumkm.R
 import com.example.bisnisumkm.data.remote.dto.DataLogin
 import com.example.bisnisumkm.databinding.ActivityHomeProdusenBinding
@@ -35,6 +36,9 @@ class HomeProdusenActivity : AppCompatActivity() {
             when(menuItem.itemId) {
                 R.id.navigation_produsen_penjual -> {
                     navController.navigate(R.id.navigation_produsen_penjual)
+                }
+                R.id.navigation_penitipan -> {
+                    navController.navigate(R.id.navigation_penitipan)
                 }
                 R.id.navigation_produsen_laporan -> {
                     navController.navigate(R.id.navigation_produsen_laporan)

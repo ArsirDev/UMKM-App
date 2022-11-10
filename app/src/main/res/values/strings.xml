@@ -5,4 +5,8 @@
     <string name="title_penjual">Penjual</string>
     <string name="title_profile">Profile</string>
     <string name="title_laporan">Laporan</string>
+    <string name="title_penitipan">Penitipan</string>
+    <string name="title_activity_penitipan">PenitipanActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_testn">testnActivity</string>
 </resources>

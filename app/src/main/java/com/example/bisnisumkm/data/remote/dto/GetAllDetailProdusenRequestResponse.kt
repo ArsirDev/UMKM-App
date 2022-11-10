@@ -34,6 +34,9 @@ data class DataAllDetailProdusenRequestResponseItem(
 	@field:SerializedName("image_penjual")
 	val imagePenjual: String,
 
+	@field:SerializedName("tanggal_pengambilan")
+	val tanggalPengambilan: String,
+
 	@field:SerializedName("harga")
 	val harga: String,
 

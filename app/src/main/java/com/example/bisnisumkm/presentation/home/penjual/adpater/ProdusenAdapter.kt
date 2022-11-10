@@ -38,6 +38,11 @@ class ProdusenAdapter: RecyclerView.Adapter<ProdusenViewHolder>() {
             bind(differ.currentList[position].also { item ->
                 itemView.setOnClickListenerWithDebounce {
                     onItemClickListener?.let { id ->
+                        id(item)
+                    }
+                }
+                holder.binding.btnDelete.setOnClickListenerWithDebounce {
+                    onItemDeleteClickListener?.let { id ->
                         id(item.id)
                     }
                 }
@@ -49,10 +54,16 @@ class ProdusenAdapter: RecyclerView.Adapter<ProdusenViewHolder>() {
         return differ.currentList.size
     }
 
-    private var onItemClickListener: ((Int) -> Unit)? = null
+    private var onItemClickListener: ((DataAllDetailProdusenRequestResponseItem) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (Int) -> Unit) {
+    fun setOnItemClickListener(listener: (DataAllDetailProdusenRequestResponseItem) -> Unit) {
         onItemClickListener = listener
+    }
+
+    private var onItemDeleteClickListener: ((Int) -> Unit)? = null
+
+    fun setOnItemDeleteClickListener(listener: (Int) -> Unit) {
+        onItemDeleteClickListener = listener
     }
 
     companion object {

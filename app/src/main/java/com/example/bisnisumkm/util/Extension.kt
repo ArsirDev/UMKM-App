@@ -60,6 +60,18 @@ fun ImageView.loadImage(imageUrl: String, cacheStrategy: DiskCacheStrategy = Dis
         .into(this)
 }
 
+fun ImageView.loadImageWithoutError(imageUrl: String, cacheStrategy: DiskCacheStrategy = DiskCacheStrategy.NONE) {
+    Glide.with(this.context)
+        .load(imageUrl)
+        .override(480, 320)
+        .timeout(9000)
+        .transition(DrawableTransitionOptions.withCrossFade())
+        .diskCacheStrategy(cacheStrategy)
+        .error(ContextCompat.getDrawable(this.context, R.drawable.ic_broken_image_black))
+        .placeholder(ContextCompat.getDrawable(this.context, R.drawable.ic_image_black))
+        .into(this)
+}
+
 fun snackbar(view: View, message: String, type: String, duration: Int = Snackbar.LENGTH_SHORT) {
     when(type) {
         STATUS_SUCCESS -> {
@@ -116,16 +128,8 @@ fun Context.getFileFromContentUri(contentUri: Uri): File {
     return tempFile
 }
 
-fun String.removeQuote(): String {
-    return this.replace("\"", "\\\"")
-}
-
 inline fun <reified T> String.fromJson(): T {
     return Gson().fromJson(this, T::class.java)
-}
-
-fun Any.toJson(): String {
-    return Gson().toJson(this)
 }
 
 fun Any.toJson(type: Type): String {
@@ -165,7 +169,7 @@ fun String.convertDate(): String {
     val inputFormatter: DateTimeFormatter =
         DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'", Locale.ENGLISH)
     val outputFormatter: DateTimeFormatter =
-        DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.ENGLISH)
+        DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH)
     val date: LocalDate = LocalDate.parse(this, inputFormatter)
     return outputFormatter.format(date)
 }

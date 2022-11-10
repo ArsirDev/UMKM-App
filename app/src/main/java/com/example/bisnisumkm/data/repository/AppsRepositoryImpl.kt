@@ -1,19 +1,7 @@
 package com.example.bisnisumkm.data.repository
 
 import com.example.bisnisumkm.data.remote.api.ApiInterface
-import com.example.bisnisumkm.data.remote.dto.AllTokolResponse
-import com.example.bisnisumkm.data.remote.dto.DetailPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.GeneralResponse
-import com.example.bisnisumkm.data.remote.dto.GetAllDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.GetLaporanResponse
-import com.example.bisnisumkm.data.remote.dto.GetSpesificDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.LaporanResponse
-import com.example.bisnisumkm.data.remote.dto.LoginPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.LoginResponse
-import com.example.bisnisumkm.data.remote.dto.RegisterResponse
-import com.example.bisnisumkm.data.remote.dto.SearchPenjualResponse
-import com.example.bisnisumkm.data.remote.dto.SearchProdusenResponse
-import com.example.bisnisumkm.data.remote.dto.SetRequestProdusenResponse
+import com.example.bisnisumkm.data.remote.dto.*
 import com.example.bisnisumkm.domain.repository.AppsRepository
 import com.example.bisnisumkm.util.ResponseHandler
 import com.example.bisnisumkm.util.Result
@@ -129,6 +117,7 @@ class AppsRepositoryImpl @Inject constructor(
         alamat_penjual: String,
         number_phone_produsen: String,
         number_phone_penjual: String,
+        tanggal_pengambilan: String,
         qty: String,
         harga: String,
         image_produsen: File,
@@ -152,10 +141,9 @@ class AppsRepositoryImpl @Inject constructor(
         val email_produsenRequest = email_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
         val alamat_produsenRequest = alamat_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
         val alamat_penjualRequest = alamat_penjual.toRequestBody("text/plain".toMediaTypeOrNull())
-        val number_phone_produsenRequest =
-            number_phone_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
-        val number_phone_penjualRequest =
-            number_phone_penjual.toRequestBody("text/plain".toMediaTypeOrNull())
+        val number_phone_produsenRequest = number_phone_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
+        val number_phone_penjualRequest = number_phone_penjual.toRequestBody("text/plain".toMediaTypeOrNull())
+        val tanggal_pengambilanRequest = tanggal_pengambilan.toRequestBody("text/plain".toMediaTypeOrNull())
         val qtyRequest = qty.toRequestBody("text/plain".toMediaTypeOrNull())
         val hargaRequest = harga.toRequestBody("text/plain".toMediaTypeOrNull())
         val image_penjualRequest = image_penjual.toRequestBody("text/plain".toMediaTypeOrNull())
@@ -174,6 +162,7 @@ class AppsRepositoryImpl @Inject constructor(
             alamat_penjualRequest,
             number_phone_produsenRequest,
             number_phone_penjualRequest,
+            tanggal_pengambilanRequest,
             qtyRequest,
             hargaRequest,
             multipartBodyProdusen,
@@ -208,17 +197,25 @@ class AppsRepositoryImpl @Inject constructor(
         product_name: String,
         name_toko: String,
         qty: String,
+        harga: String,
         sisa_product: String,
         laku_product: String,
+        keuntungan_produsen: String,
+        tanggal_nitip: String,
+        tanggal_pengambilan: String,
         status: String
-    ): Result<LaporanResponse> = responseHandler.handleResponse {
+    ): Result<SetLaporanResponse> = responseHandler.handleResponse {
         val produsen_nameRequest = produsen_name.toRequestBody("text/plain".toMediaTypeOrNull())
         val penjual_nameRequest = penjual_name.toRequestBody("text/plain".toMediaTypeOrNull())
         val product_nameRequest = product_name.toRequestBody("text/plain".toMediaTypeOrNull())
         val name_tokoRequest = name_toko.toRequestBody("text/plain".toMediaTypeOrNull())
         val qtyRequest = qty.toRequestBody("text/plain".toMediaTypeOrNull())
+        val hargaRequest = harga.toRequestBody("text/plain".toMediaTypeOrNull())
         val sisa_productRequest = sisa_product.toRequestBody("text/plain".toMediaTypeOrNull())
         val laku_productRequest = laku_product.toRequestBody("text/plain".toMediaTypeOrNull())
+        val keuntungan_produsenRequest = keuntungan_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
+        val tanggal_nitipRequest = tanggal_nitip.toRequestBody("text/plain".toMediaTypeOrNull())
+        val tanggal_pengambilanpRequest = tanggal_pengambilan.toRequestBody("text/plain".toMediaTypeOrNull())
         val statusRequest = status.toRequestBody("text/plain".toMediaTypeOrNull())
 
         apiService.setLaporan(
@@ -227,8 +224,12 @@ class AppsRepositoryImpl @Inject constructor(
             product_nameRequest,
             name_tokoRequest,
             qtyRequest,
+            hargaRequest,
             sisa_productRequest,
             laku_productRequest,
+            keuntungan_produsenRequest,
+            tanggal_nitipRequest,
+            tanggal_pengambilanpRequest,
             statusRequest
         )
     }
@@ -245,4 +246,15 @@ class AppsRepositoryImpl @Inject constructor(
         apiService.deleteProdusenRequest(id)
     }
 
+    override suspend fun deleteLaporanPenjualRequest(id: Int): Result<GeneralResponse> = responseHandler.handleResponse {
+        apiService.deleteLaporanPenjualRequest(id)
+    }
+
+    override suspend fun deleteLaporanProdusenRequest(id: Int): Result<GeneralResponse> = responseHandler.handleResponse {
+        apiService.deleteLaporanProdusenRequest(id)
+    }
+
+    override suspend fun getAllStatusPenitipan(status_penitipan: String): Result<GetAllStatusResponse> = responseHandler.handleResponse {
+        apiService.getAllStatusRequestProdusen(status_penitipan)
+    }
 }

@@ -16,13 +16,9 @@ import com.example.bisnisumkm.data.remote.dto.SearchPenjualResponse
 import com.example.bisnisumkm.databinding.FragmentPenjualOnProdusenBinding
 import com.example.bisnisumkm.presentation.home.produsen.adapter.PenjualOnProdusenAdapter
 import com.example.bisnisumkm.presentation.home.produsen.detail.DetailPenjualOnProdusenActivity
+import com.example.bisnisumkm.util.*
 import com.example.bisnisumkm.util.MESSAGE.STATUS_ERROR
-import com.example.bisnisumkm.util.MarginItemDecorationVertical
-import com.example.bisnisumkm.util.Result
 import com.example.bisnisumkm.util.SESSION.ID
-import com.example.bisnisumkm.util.removeView
-import com.example.bisnisumkm.util.showView
-import com.example.bisnisumkm.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

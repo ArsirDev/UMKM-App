@@ -49,6 +49,9 @@ data class DataSetRequestProdusenResponse(
 	@field:SerializedName("id_penjual")
 	val idPenjual: String,
 
+	@field:SerializedName("tanggal_pengambilan")
+	val tanggalPengambilan: String,
+
 	@field:SerializedName("number_phone_produsen")
 	val numberPhoneProdusen: String,
 

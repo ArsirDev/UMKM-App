@@ -1,6 +1,5 @@
 package com.example.bisnisumkm.presentation.home.admin.activity.ui.penjual
 
-import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.bisnisumkm.data.remote.dto.RegisterResponse
 import com.example.bisnisumkm.domain.repository.AppsRepository
 import com.example.bisnisumkm.util.Result
-import com.example.bisnisumkm.util.removeQuote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.io.File

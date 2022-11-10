@@ -6,15 +6,23 @@
     app:startDestination="@id/navigation_produsen_penjual">
 
     <fragment
-        android:id="@+id/navigation_produsen_laporan"
-        android:name="com.example.bisnisumkm.presentation.home.produsen.ui.laporan.LaporanProdusenFragment"
-        android:label="fragment_laporan_produsen"
-        tools:layout="@layout/fragment_laporan_produsen" />
-    <fragment
         android:id="@+id/navigation_produsen_penjual"
         android:name="com.example.bisnisumkm.presentation.home.produsen.ui.penjual.PenjualOnProdusenFragment"
         android:label="fragment_penjual_on_produsen"
         tools:layout="@layout/fragment_penjual_on_produsen" />
+
+    <fragment
+        android:id="@+id/navigation_penitipan"
+        android:name="com.example.bisnisumkm.presentation.home.produsen.ui.penitipan.PenitipanFragment"
+        android:label="fragment_penitipan"
+        tools:layout="@layout/fragment_penitipan" />
+
+    <fragment
+        android:id="@+id/navigation_produsen_laporan"
+        android:name="com.example.bisnisumkm.presentation.home.produsen.ui.laporan.LaporanProdusenFragment"
+        android:label="fragment_laporan_produsen"
+        tools:layout="@layout/fragment_laporan_produsen" />
+
     <fragment
         android:id="@+id/navigation_produsen_profile"
         android:name="com.example.bisnisumkm.presentation.home.produsen.ui.profile.ProdusenProfileFragment"

@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.bisnisumkm.data.remote.dto.GeneralResponse
-import com.example.bisnisumkm.data.remote.dto.GetAllDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.GetSpesificDetailProdusenRequestResponse
-import com.example.bisnisumkm.data.remote.dto.LaporanResponse
+import com.example.bisnisumkm.data.remote.dto.*
 import com.example.bisnisumkm.domain.repository.AppsRepository
 import com.example.bisnisumkm.util.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +22,7 @@ class ProdusenPenjualViewModel @Inject constructor(
 
     val _updateStatus = MutableLiveData<Result<GeneralResponse>>()
 
-    val _laporan = MutableLiveData<Result<LaporanResponse>>()
+    val _laporan = MutableLiveData<Result<SetLaporanResponse>>()
 
     val _deleteRequest = MutableLiveData<Result<GeneralResponse>>()
 
@@ -73,11 +70,15 @@ class ProdusenPenjualViewModel @Inject constructor(
         product_name: String,
         name_toko: String,
         qty: String,
+        harga: String,
         sisa_product: String,
         laku_product: String,
+        keuntungan_produsen: String,
+        tanggal_nitip: String,
+        tanggal_pengambilan: String,
         status: String
     ){
-        if (produsen_name.isEmpty() || penjual_name.isEmpty() || product_name.isEmpty() || name_toko.isEmpty() || qty.isEmpty() || sisa_product.isEmpty() || laku_product.isEmpty() || status.isEmpty()) {
+        if (produsen_name.isEmpty() || penjual_name.isEmpty() || product_name.isEmpty() || name_toko.isEmpty() || qty.isEmpty() || harga.isEmpty() || sisa_product.isEmpty() || laku_product.isEmpty() || keuntungan_produsen.isEmpty() || tanggal_nitip.isEmpty() || tanggal_pengambilan.isEmpty() || status.isEmpty()) {
             _laporan.postValue(Result.Error(null, "Data tidak boleh kosong"))
             return
         }
@@ -88,20 +89,28 @@ class ProdusenPenjualViewModel @Inject constructor(
             product_name,
             name_toko,
             qty,
+            harga,
             sisa_product,
             laku_product,
+            keuntungan_produsen,
+            tanggal_nitip,
+            tanggal_pengambilan,
             status
         )
     }
 
-    fun setLaporan(
+    private fun setLaporan(
         produsen_name: String,
         penjual_name: String,
         product_name: String,
         name_toko: String,
         qty: String,
+        harga: String,
         sisa_product: String,
         laku_product: String,
+        keuntungan_produsen: String,
+        tanggal_nitip: String,
+        tanggal_pengambilan: String,
         status: String
     ) = viewModelScope.launch {
         _laporan.postValue(Result.Loading())
@@ -111,14 +120,18 @@ class ProdusenPenjualViewModel @Inject constructor(
             product_name,
             name_toko,
             qty,
+            harga,
             sisa_product,
             laku_product,
+            keuntungan_produsen,
+            tanggal_nitip,
+            tanggal_pengambilan,
             status
         )
         _laporan.postValue(laporan)
     }
 
-    fun getLaporan(): LiveData<Result<LaporanResponse>> = _laporan
+    fun getLaporan(): LiveData<Result<SetLaporanResponse>> = _laporan
 
     fun setDeleteRequest(
         id: Int

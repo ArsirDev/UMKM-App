@@ -10,20 +10,17 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bisnisumkm.R
+import com.example.bisnisumkm.data.remote.dto.GeneralResponse
 import com.example.bisnisumkm.data.remote.dto.GetAllDetailProdusenRequestResponse
 import com.example.bisnisumkm.databinding.FragmentProdusenOnPenjualBinding
 import com.example.bisnisumkm.presentation.home.penjual.adpater.ProdusenAdapter
 import com.example.bisnisumkm.presentation.home.penjual.detail.DetailProdusenPenjualActivity
+import com.example.bisnisumkm.util.*
 import com.example.bisnisumkm.util.MESSAGE.STATUS_ERROR
-import com.example.bisnisumkm.util.MarginItemDecorationVertical
-import com.example.bisnisumkm.util.Result
 import com.example.bisnisumkm.util.SESSION.ID
-import com.example.bisnisumkm.util.SessionManager
-import com.example.bisnisumkm.util.removeView
-import com.example.bisnisumkm.util.showView
-import com.example.bisnisumkm.util.snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -65,6 +62,9 @@ class ProdusenPenjualFragment : Fragment(R.layout.fragment_produsen_on_penjual) 
         observerProdusenPenjualResponse?.let {
             viewModel.getProdusen().observe(viewLifecycleOwner, it)
         }
+        observerDeleteRequest?.let {
+            viewModel.getDeleteRequest().observe(viewLifecycleOwner, it)
+        }
     }
 
     private var observerProdusenPenjualResponse: Observer<Result<GetAllDetailProdusenRequestResponse>>? = Observer { result ->
@@ -99,6 +99,40 @@ class ProdusenPenjualFragment : Fragment(R.layout.fragment_produsen_on_penjual) 
         }
     }
 
+    private var observerDeleteRequest: Observer<Result<GeneralResponse>>? = Observer { result ->
+        lifecycleScope.launchWhenStarted {
+            lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    when(result) {
+                        is Result.Loading ->{
+                            binding.pbLoading.showView()
+
+                        }
+                        is Result.Success ->{
+                            binding.pbLoading.removeView()
+                            result.message?.let { message ->
+                                snackbar(binding.root, message, MESSAGE.STATUS_SUCCESS)
+                            } ?: result.data?.message?.let { message ->
+                                snackbar(binding.root, message, MESSAGE.STATUS_SUCCESS)
+                            }
+                            findNavController().currentDestination?.id?.let { navControllerId ->
+                                findNavController().navigate(navControllerId)
+                            }
+                        }
+                        is Result.Error ->{
+                            binding.pbLoading.removeView()
+                            result.message?.let { message ->
+                                snackbar(binding.root, message, MESSAGE.STATUS_SUCCESS)
+                            } ?: result.data?.message?.let { message ->
+                                snackbar(binding.root, message, MESSAGE.STATUS_SUCCESS)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     private fun initAdapter() {
         produsenAdapter.let { adapter ->
             binding.rvProdusen.apply {
@@ -107,8 +141,20 @@ class ProdusenPenjualFragment : Fragment(R.layout.fragment_produsen_on_penjual) 
                 this.addItemDecoration(MarginItemDecorationVertical(16))
                 ViewCompat.setNestedScrollingEnabled(this, true)
             }
-            adapter.setOnItemClickListener { id ->
-                startActivity(Intent(requireContext(), DetailProdusenPenjualActivity::class.java).putExtra(ID, id))
+            adapter.setOnItemClickListener { dataItem ->
+                if (dataItem.statusPenitipan == "DITOLAK") {
+                    snackbar(binding.root, "Pinitipan telah anda tolak, silahkan dihapus", STATUS_ERROR)
+                    return@setOnItemClickListener
+                }
+                if (dataItem.statusPenitipan == "SELESAI") {
+                    snackbar(binding.root, "Penitipan telah selesai, silahkan dihapus", STATUS_ERROR)
+                    return@setOnItemClickListener
+                }
+                startActivity(Intent(requireContext(), DetailProdusenPenjualActivity::class.java).putExtra(ID, dataItem.id))
+            }
+
+            adapter.setOnItemDeleteClickListener { id ->
+                viewModel.setDeleteRequest(id)
             }
         }
     }
