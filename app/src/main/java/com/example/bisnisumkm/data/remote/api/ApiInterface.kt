@@ -146,6 +146,8 @@ interface ApiInterface {
         @Part("sisa_product") sisa_product: RequestBody,
         @Part("laku_product") laku_product: RequestBody,
         @Part("keuntungan_produsen") keuntungan_produsen: RequestBody,
+        @Part("barang_rusak") barang_rusak: RequestBody,
+        @Part("expired") expired: RequestBody,
         @Part("tanggal_nitip") tanggal_nitip: RequestBody,
         @Part("tanggal_pengambilan") tanggal_pengambilan: RequestBody,
         @Part("status") status: RequestBody

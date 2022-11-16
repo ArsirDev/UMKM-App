@@ -2,7 +2,9 @@ package com.example.bisnisumkm.presentation.home.produsen.ui.penjual
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -33,9 +35,18 @@ class PenjualOnProdusenFragment : Fragment(R.layout.fragment_penjual_on_produsen
 
     private lateinit var penjualOnProdusenAdapter: PenjualOnProdusenAdapter
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        initInstance(inflater, container)
+        viewModel.setSearchPenjual(" ")
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        initInstance(view)
-        super.onViewCreated(binding.root, savedInstanceState)
+        super.onViewCreated(view, savedInstanceState)
         initLaunch()
         initAdapter()
         initView()
@@ -43,7 +54,7 @@ class PenjualOnProdusenFragment : Fragment(R.layout.fragment_penjual_on_produsen
 
     override fun onResume() {
         super.onResume()
-        viewModel.setSearchPenjual("")
+        viewModel.setSearchPenjual(" ")
     }
 
     private fun initView() {
@@ -72,8 +83,11 @@ class PenjualOnProdusenFragment : Fragment(R.layout.fragment_penjual_on_produsen
                             result.data?.dataSearchPenjual?.dataSearchPenjualItem?.let { item ->
                                 if (item.isEmpty()) {
                                     binding.icEmpty.showView()
+                                    binding.rvPenjual.removeView()
                                     return@let
                                 }
+                                binding.icEmpty.removeView()
+                                binding.rvPenjual.showView()
                                 penjualOnProdusenAdapter.differ.submitList(item)
                             }
                         }
@@ -105,8 +119,8 @@ class PenjualOnProdusenFragment : Fragment(R.layout.fragment_penjual_on_produsen
         }
     }
 
-    private fun initInstance(view: View) {
-        _binding = FragmentPenjualOnProdusenBinding.bind(view)
+    private fun initInstance(inflater: LayoutInflater, container: ViewGroup?) {
+        _binding = FragmentPenjualOnProdusenBinding.inflate(inflater, container,false)
         penjualOnProdusenAdapter = PenjualOnProdusenAdapter.instance()
     }
 

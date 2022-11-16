@@ -32,6 +32,7 @@ object SESSION {
     const val ID = "ID"
     const val EMAIL = "EMAIL"
     const val NAME = "NAME"
+    const val PASSDATA = "PASSDATA"
     const val STORE_NAME = "STORE_NAME"
     const val ADDRESS = "ADDRESS"
     const val STATUS = "STATUS"

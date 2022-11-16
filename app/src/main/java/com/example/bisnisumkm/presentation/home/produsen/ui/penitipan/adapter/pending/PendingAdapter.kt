@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bisnisumkm.data.remote.dto.GetAllStatusItem
 import com.example.bisnisumkm.databinding.PenjualOnProdusenItemLayoutBinding
+import com.example.bisnisumkm.util.setOnClickListenerWithDebounce
 
 class PendingAdapter: RecyclerView.Adapter<PendingViewHolder>() {
 
@@ -33,11 +34,25 @@ class PendingAdapter: RecyclerView.Adapter<PendingViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: PendingViewHolder, position: Int) {
-        holder.bind(differ.currentList[position])
+        holder.apply {
+            bind(differ.currentList[position].also { item ->
+                itemView.setOnClickListenerWithDebounce {
+                    onItemClickListener?.let { dataItem ->
+                        dataItem(item)
+                    }
+                }
+            })
+        }
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    private var onItemClickListener:((GetAllStatusItem) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (GetAllStatusItem) -> Unit) {
+        onItemClickListener = listener
     }
 
     companion object {

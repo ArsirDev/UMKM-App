@@ -196,6 +196,8 @@ class DetailProdusenPenjualActivity : AppCompatActivity() {
             btnSelesai.setOnClickListenerWithDebounce {
                 val sisaBarang = etSisa.text.toString().trim()
                 val barangLaku = etLaku.text.toString().trim()
+                val barangRusak = etRusak.text.toString().trim()
+                val barangExpired = etExpired.text.toString().trim()
                 val keuntunganProdusen = (item.harga.toInt() *  barangLaku.toInt())
                 if (sisaBarang.isEmpty() || barangLaku.isEmpty()) {
                     snackbar(binding.root, "Field tidak boleh kosong", STATUS_ERROR)
@@ -215,6 +217,8 @@ class DetailProdusenPenjualActivity : AppCompatActivity() {
                     sisa_product = sisaBarang,
                     laku_product = barangLaku,
                     keuntungan_produsen = keuntunganProdusen.toString(),
+                    barang_rusak = barangRusak,
+                    expired = barangExpired,
                     tanggal_nitip = item.createdAt.convertDate(),
                     tanggal_pengambilan = item.tanggalPengambilan,
                     status = "SELESAI"

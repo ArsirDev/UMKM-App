@@ -1,5 +1,6 @@
 package com.example.bisnisumkm.presentation.home.produsen.ui.penitipan.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,14 +13,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bisnisumkm.data.remote.dto.GetAllStatusItem
 import com.example.bisnisumkm.data.remote.dto.GetAllStatusResponse
 import com.example.bisnisumkm.databinding.FragmentApproveBinding
+import com.example.bisnisumkm.presentation.home.produsen.ui.penitipan.DetailPenitipanActivity
 import com.example.bisnisumkm.presentation.home.produsen.ui.penitipan.adapter.aprrove.ApproveAdapter
 import com.example.bisnisumkm.presentation.home.produsen.ui.penitipan.viewmodel.StatusViewModel
-import com.example.bisnisumkm.util.MarginItemDecorationVertical
-import com.example.bisnisumkm.util.Result
-import com.example.bisnisumkm.util.removeView
-import com.example.bisnisumkm.util.showView
+import com.example.bisnisumkm.util.*
+import com.example.bisnisumkm.util.SESSION.PASSDATA
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -90,6 +91,9 @@ class ApproveFragment : Fragment() {
                 layoutManager = LinearLayoutManager(requireContext())
                 this.addItemDecoration(MarginItemDecorationVertical(16))
                 ViewCompat.setNestedScrollingEnabled(this, true)
+            }
+            adapter.setOnItemClickListener { dataItem ->
+                startActivity(Intent(requireContext(), DetailPenitipanActivity::class.java).putExtra(PASSDATA, dataItem.toJson(GetAllStatusItem::class.java)))
             }
         }
     }

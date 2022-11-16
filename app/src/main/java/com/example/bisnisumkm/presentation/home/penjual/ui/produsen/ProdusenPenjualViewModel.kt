@@ -74,6 +74,8 @@ class ProdusenPenjualViewModel @Inject constructor(
         sisa_product: String,
         laku_product: String,
         keuntungan_produsen: String,
+        barang_rusak: String,
+        expired: String,
         tanggal_nitip: String,
         tanggal_pengambilan: String,
         status: String
@@ -93,6 +95,8 @@ class ProdusenPenjualViewModel @Inject constructor(
             sisa_product,
             laku_product,
             keuntungan_produsen,
+            barang_rusak,
+            expired,
             tanggal_nitip,
             tanggal_pengambilan,
             status
@@ -109,6 +113,8 @@ class ProdusenPenjualViewModel @Inject constructor(
         sisa_product: String,
         laku_product: String,
         keuntungan_produsen: String,
+        barang_rusak: String,
+        expired: String,
         tanggal_nitip: String,
         tanggal_pengambilan: String,
         status: String
@@ -124,6 +130,8 @@ class ProdusenPenjualViewModel @Inject constructor(
             sisa_product,
             laku_product,
             keuntungan_produsen,
+            barang_rusak,
+            expired,
             tanggal_nitip,
             tanggal_pengambilan,
             status

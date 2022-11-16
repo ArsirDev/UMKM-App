@@ -1,18 +1,14 @@
 package com.example.bisnisumkm.presentation.home.produsen.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.bundleOf
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.bisnisumkm.R
-import com.example.bisnisumkm.data.remote.dto.DataLogin
 import com.example.bisnisumkm.databinding.ActivityHomeProdusenBinding
-import com.example.bisnisumkm.util.P_E_M
-import com.example.bisnisumkm.util.SESSION.PRODUSEN_LOGIN
-import com.example.bisnisumkm.util.SimpleName
-import com.example.bisnisumkm.util.fromJson
-import com.example.bisnisumkm.util.toJson
+import com.example.bisnisumkm.presentation.home.produsen.ui.penjual.PenjualOnProdusenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,12 +22,12 @@ class HomeProdusenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         initInstance()
         setContentView(binding.root)
-        initNavigation()
-    }
-
-    private fun initNavigation() {
         val navController = findNavController(R.id.nav_host_fragment_activity_produsen_home)
         navController.navigate(R.id.navigation_produsen_penjual)
+        initNavigation(navController)
+    }
+
+    private fun initNavigation(navController: NavController) {
         binding.navView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.navigation_produsen_penjual -> {

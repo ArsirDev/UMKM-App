@@ -76,8 +76,11 @@ class ProdusenFragment : Fragment(R.layout.fragment_produsen) {
                             result.data?.dataSearchProdusen?.let { item ->
                                 if (item.dataItem.isEmpty()) {
                                     binding.icEmpty.showView()
+                                    binding.rvProdusen.removeView()
                                     return@let
                                 }
+                                binding.icEmpty.removeView()
+                                binding.rvProdusen.showView()
                                 produsenAdapter.differ.submitList(item.dataItem)
                             }
                         }

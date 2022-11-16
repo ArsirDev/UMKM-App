@@ -201,6 +201,8 @@ class AppsRepositoryImpl @Inject constructor(
         sisa_product: String,
         laku_product: String,
         keuntungan_produsen: String,
+        barang_rusak: String,
+        expired: String,
         tanggal_nitip: String,
         tanggal_pengambilan: String,
         status: String
@@ -214,6 +216,8 @@ class AppsRepositoryImpl @Inject constructor(
         val sisa_productRequest = sisa_product.toRequestBody("text/plain".toMediaTypeOrNull())
         val laku_productRequest = laku_product.toRequestBody("text/plain".toMediaTypeOrNull())
         val keuntungan_produsenRequest = keuntungan_produsen.toRequestBody("text/plain".toMediaTypeOrNull())
+        val barang_rusakRequest = barang_rusak.toRequestBody("text/plain".toMediaTypeOrNull())
+        val expiredRequest = expired.toRequestBody("text/plain".toMediaTypeOrNull())
         val tanggal_nitipRequest = tanggal_nitip.toRequestBody("text/plain".toMediaTypeOrNull())
         val tanggal_pengambilanpRequest = tanggal_pengambilan.toRequestBody("text/plain".toMediaTypeOrNull())
         val statusRequest = status.toRequestBody("text/plain".toMediaTypeOrNull())
@@ -228,6 +232,8 @@ class AppsRepositoryImpl @Inject constructor(
             sisa_productRequest,
             laku_productRequest,
             keuntungan_produsenRequest,
+            barang_rusakRequest,
+            expiredRequest,
             tanggal_nitipRequest,
             tanggal_pengambilanpRequest,
             statusRequest

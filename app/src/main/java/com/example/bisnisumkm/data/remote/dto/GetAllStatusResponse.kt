@@ -61,6 +61,9 @@ data class GetAllStatusItem(
 	@field:SerializedName("name_toko")
 	val nameToko: String,
 
+	@field:SerializedName("tanggal_pengambilan")
+	val tanggalPengambilan: String,
+
 	@field:SerializedName("id")
 	val id: Int,
 

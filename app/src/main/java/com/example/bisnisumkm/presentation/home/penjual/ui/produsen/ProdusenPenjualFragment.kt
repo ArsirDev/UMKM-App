@@ -80,8 +80,11 @@ class ProdusenPenjualFragment : Fragment(R.layout.fragment_produsen_on_penjual) 
                             result.data?.dataAllDetailProdusenRequestResponseItem?.let { item ->
                                 if (item.isEmpty()) {
                                     binding.icEmpty.showView()
+                                    binding.rvProdusen.removeView()
                                     return@let
                                 }
+                                binding.icEmpty.removeView()
+                                binding.rvProdusen.showView()
                                 produsenAdapter.differ.submitList(item)
                             }
                         }

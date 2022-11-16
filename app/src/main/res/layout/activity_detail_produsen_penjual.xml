@@ -324,6 +324,68 @@
 
                </com.google.android.material.textfield.TextInputLayout>
 
+               <TextView
+                   android:id="@+id/title_of_rusak"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/roboto_bold"
+                   android:layout_marginTop="8dp"
+                   android:text="Barang Rusak"
+                   android:textColor="@color/light_blue"
+                   android:textSize="17sp"
+                   app:layout_constraintTop_toBottomOf="@+id/tl_laku"
+                   app:layout_constraintStart_toStartOf="parent" />
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/tl_rusak"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/title_of_rusak">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/et_rusak"
+                       style="@style/CustomEditText"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto"
+                       android:hint="Barang Rusak ..."
+                       android:inputType="number"
+                       android:textColor="@color/textColorGrey" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <TextView
+                   android:id="@+id/title_of_expired"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/roboto_bold"
+                   android:layout_marginTop="8dp"
+                   android:text="Barang Expired"
+                   android:textColor="@color/light_blue"
+                   android:textSize="17sp"
+                   app:layout_constraintTop_toBottomOf="@+id/tl_rusak"
+                   app:layout_constraintStart_toStartOf="parent" />
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/tl_expired"
+                   android:layout_width="250dp"
+                   android:layout_height="wrap_content"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/title_of_expired">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/et_expired"
+                       style="@style/CustomEditText"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:fontFamily="@font/roboto"
+                       android:hint="Barang Expired ..."
+                       android:inputType="number"
+                       android:textColor="@color/textColorGrey" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
                <Button
                    android:id="@+id/btn_selesai"
                    android:layout_width="match_parent"
@@ -340,7 +402,7 @@
                    app:layout_constraintBottom_toBottomOf="parent"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toBottomOf="@+id/tl_laku" />
+                   app:layout_constraintTop_toBottomOf="@+id/tl_expired" />
 
            </androidx.constraintlayout.widget.ConstraintLayout>
 

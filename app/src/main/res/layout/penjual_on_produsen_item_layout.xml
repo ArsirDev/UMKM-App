@@ -17,7 +17,6 @@
             android:layout_height="45dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_admin"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:src="@drawable/ic_store"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_image"
             app:layout_constraintStart_toEndOf="@+id/iv_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/iv_image" />
 
         <TextView
             android:id="@+id/tv_store"
@@ -48,11 +48,10 @@
             android:id="@+id/iv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:src="@drawable/ic_person"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/iv_store"
-            app:layout_constraintTop_toBottomOf="@+id/iv_store" />
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/iv_image"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -68,26 +67,14 @@
             app:layout_constraintStart_toEndOf="@+id/iv_name"
             app:layout_constraintTop_toTopOf="@+id/iv_name" />
 
-        <View
-            android:id="@+id/cv_dot"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:layout_marginStart="16dp"
-            android:background="@drawable/dot_layout"
-            android:alpha="0.3"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_name"
-            app:layout_constraintStart_toEndOf="@+id/tv_name"
-            app:layout_constraintTop_toTopOf="@+id/iv_name" />
-
         <ImageView
             android:id="@+id/iv_alamat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:src="@drawable/ic_address"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cv_dot"
-            app:layout_constraintStart_toEndOf="@+id/cv_dot"
-            app:layout_constraintTop_toTopOf="@+id/cv_dot" />
+            app:layout_constraintStart_toStartOf="@+id/iv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
         <TextView
             android:id="@+id/tv_alamat"

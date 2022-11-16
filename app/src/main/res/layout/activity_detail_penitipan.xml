@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.home.produsen.ui.penitipan.DetailPenitipanActivity">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#79000000"
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:textColor="@color/white"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Status"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="Nama Produk"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_image" />
+
+    <ImageView
+        android:id="@+id/iv_toko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_store"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_name" />
+
+    <TextView
+        android:id="@+id/tv_toko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Nama Toko"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_toko"
+        app:layout_constraintStart_toEndOf="@+id/iv_toko"
+        app:layout_constraintTop_toTopOf="@+id/iv_toko" />
+
+    <ImageView
+        android:id="@+id/iv_address_toko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_toko" />
+
+    <TextView
+        android:id="@+id/tv_address_toko"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Alamat Toko"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_address_toko"
+        app:layout_constraintStart_toEndOf="@+id/iv_address_toko"
+        app:layout_constraintTop_toTopOf="@+id/iv_address_toko" />
+
+    <ImageView
+        android:id="@+id/iv_produsen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_address_toko" />
+
+    <TextView
+        android:id="@+id/tv_produsen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Nama Produsen"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_produsen"
+        app:layout_constraintStart_toEndOf="@+id/iv_produsen"
+        app:layout_constraintTop_toTopOf="@+id/iv_produsen" />
+
+    <ImageView
+        android:id="@+id/iv_qty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_stock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_produsen" />
+
+    <TextView
+        android:id="@+id/tv_qty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Qty"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_qty"
+        app:layout_constraintStart_toEndOf="@+id/iv_qty"
+        app:layout_constraintTop_toTopOf="@+id/iv_qty" />
+
+    <ImageView
+        android:id="@+id/iv_prize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_money"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_qty" />
+
+    <TextView
+        android:id="@+id/tv_prize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="12.000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_prize"
+        app:layout_constraintStart_toEndOf="@+id/iv_prize"
+        app:layout_constraintTop_toTopOf="@+id/iv_prize" />
+
+    <ImageView
+        android:id="@+id/iv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_prize" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0812 2523 2312"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_phone"
+        app:layout_constraintStart_toEndOf="@+id/iv_phone"
+        app:layout_constraintTop_toTopOf="@+id/iv_phone" />
+
+
+    <ImageView
+        android:id="@+id/iv_penitipan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+    <TextView
+        android:id="@+id/tv_penitipan_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Tanggal Penitipan"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_penitipan"
+        app:layout_constraintStart_toEndOf="@+id/iv_penitipan"
+        app:layout_constraintTop_toTopOf="@+id/iv_penitipan" />
+
+    <TextView
+        android:id="@+id/tv_penitipan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="12/03/2022"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_penitipan_title"
+        app:layout_constraintTop_toBottomOf="@+id/iv_penitipan" />
+
+    <ImageView
+        android:id="@+id/iv_pengambilan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_penitipan" />
+
+    <TextView
+        android:id="@+id/tv_pengambilan_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Tanggal Pengambilan"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_pengambilan"
+        app:layout_constraintStart_toEndOf="@+id/iv_pengambilan"
+        app:layout_constraintTop_toTopOf="@+id/iv_pengambilan" />
+
+    <TextView
+        android:id="@+id/tv_pengambilan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="12/03/2022"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_pengambilan_title"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pengambilan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

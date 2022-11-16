@@ -20,28 +20,8 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="r">
         <activity
-            android:name=".testnActivity"
-            android:exported="false"
-            android:label="@string/title_activity_testn"
-            android:theme="@style/Theme.BisnisUMKM.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PenitipanActivity"
-            android:exported="false"
-            android:label="@string/title_activity_penitipan"
-            android:theme="@style/Theme.BisnisUMKM.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".TestActivity"
-            android:exported="false"
-            android:label="@string/title_activity_test"
-            android:theme="@style/Theme.BisnisUMKM.NoActionBar">
+            android:name=".presentation.home.produsen.ui.penitipan.DetailPenitipanActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

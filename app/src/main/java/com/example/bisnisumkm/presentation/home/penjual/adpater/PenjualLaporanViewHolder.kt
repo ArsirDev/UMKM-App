@@ -15,6 +15,8 @@ class PenjualLaporanViewHolder(
             tvProduct.text = String.format("Nama Produk %s", dataLaporanItemPenjulan.productName)
             tvQty.text = String.format("Jumlah Penitipan %s pcs", dataLaporanItemPenjulan.qty)
             tvSisa.text = String.format("Jumlah Sisa %s pcs", dataLaporanItemPenjulan.sisaProduct)
+            tvRusak.text = String.format("Jumlah Rusak %s pcs", dataLaporanItemPenjulan.barangRusak)
+            tvExpired.text = String.format("Jumlah Expired %s pcs", dataLaporanItemPenjulan.expired)
             tvLaku.text = String.format("Jumlah Laku %s pcs", dataLaporanItemPenjulan.lakuProduct)
             tvKeuntungan.text = String.format("Uang yang harus diberikan %s", dataLaporanItemPenjulan.harga.toInt() * dataLaporanItemPenjulan.lakuProduct.toInt())
             tvTanggalPengambilan.text = String.format("Tanggal Pengambilan %s",dataLaporanItemPenjulan.tanggalPengambilan)

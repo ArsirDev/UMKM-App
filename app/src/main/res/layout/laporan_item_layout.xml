@@ -70,6 +70,26 @@
         app:layout_constraintTop_toBottomOf="@id/tv_sisa" />
 
     <TextView
+        android:id="@+id/tv_rusak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Jumlah Rusak: 2 pcs"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_laku" />
+
+    <TextView
+        android:id="@+id/tv_expired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Jumlah Expired: 2 pcs"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_rusak" />
+
+    <TextView
         android:id="@+id/tv_keuntungan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,7 +97,7 @@
         android:text="Keuntungan: 20000"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_laku" />
+        app:layout_constraintTop_toBottomOf="@id/tv_expired" />
 
     <TextView
         android:id="@+id/tv_tanggal_penitipan"
@@ -113,10 +133,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="8dp"
         android:text="Selesai"
         android:textColor="@color/red_color"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_tanggal_pengambilan"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_tanggal_pengambilan" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_pengambilan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

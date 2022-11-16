@@ -95,6 +95,8 @@ interface AppsRepository {
         sisa_product: String,
         laku_product: String,
         keuntungan_produsen: String,
+        barang_rusak: String,
+        expired: String,
         tanggal_nitip: String,
         tanggal_pengambilan: String,
         status: String

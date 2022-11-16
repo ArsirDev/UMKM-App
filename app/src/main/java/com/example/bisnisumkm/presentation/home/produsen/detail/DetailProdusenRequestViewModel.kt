@@ -73,7 +73,7 @@ class DetailProdusenRequestViewModel @Inject constructor(
             alamat_penjual.isEmpty() ||
             number_phone_produsen.isEmpty() ||
             number_phone_penjual.isEmpty() ||
-            tanggal_pengambilan.isEmpty() ||
+            (tanggal_pengambilan.isEmpty() || tanggal_pengambilan == "Tanggal Pengambilan") ||
             qty.isEmpty() ||
             harga.isEmpty() ||
             image_produsen == null||

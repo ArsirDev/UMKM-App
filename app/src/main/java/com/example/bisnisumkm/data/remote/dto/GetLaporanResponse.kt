@@ -46,6 +46,12 @@ data class DataGetLaporanItem(
 	@field:SerializedName("sisa_product")
 	val sisaProduct: String,
 
+	@field:SerializedName("barang_rusak")
+	val barangRusak: String,
+
+	@field:SerializedName("expired")
+	val expired: String,
+
 	@field:SerializedName("name_toko")
 	val nameToko: String,
 
